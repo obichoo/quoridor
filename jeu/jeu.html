@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quoridor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/icon.png" type="image/x-icon">
+    <style>
+        *::-webkit-scrollbar {
+            visibility: hidden;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #FCF6CD;
+            border-radius: 10px;
+        }
+
+        body {
+            background-color: #EDA85A;
+            font-family: Raleway, sans-serif;
+            overflow-x: hidden;
+        }
+
+        #plateau {
+            width: 760px;
+            border: 5px solid #FCF6CD;
+            margin: auto;
+            background-color: #FCF6CD;
+            border-radius: 20px;
+            padding: 15px;
+        }
+
+        div[class*=ligne] {
+            width: 760px;
+            display: flex;
+        }
+
+        div[class*=stock] {
+            display: flex;
+        }
+
+        .reserve1,
+        .reserve2 {
+            display: flex;
+            width: 65px;
+            height: 160px;
+            background-color: #FCF6CD;
+        }
+
+        .stock1 {
+            border-bottom: solid 5px #FCF6CD;
+        }
+
+        .stock2 {
+            border-top: solid 5px #FCF6CD;
+        }
+
+        .reserve2 {
+            width: 5px;
+            height: 160px;
+            background-color: #c9904f;
+        }
+
+        .dispo {
+            background-color: white;
+        }
+
+        .rectangle1 {
+            width: 80px;
+            height: 80px;
+        }
+
+        .rectangle2 {
+            width: 5px;
+            height: 80px;
+            background-color: #EDA85A;
+        }
+
+        .rectangle3 {
+            width: 80px;
+            height: 5px;
+            background-color: #EDA85A;
+        }
+
+        .rectangle4 {
+            width: 5px;
+            height: 5px;
+            background-color: #EDA85A;
+        }
+
+        .pion1,
+        .pion2 {
+            position: absolute;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            background-color: #1F8B87;
+            pointer-events: none;
+        }
+
+        .pion2 {
+            background-color: #AD2228;
+        }
+
+        a {
+            position: absolute;
+            top: 20px;
+            left: 2vw;
+            font-weight: bold;
+            width: 15vw;
+            height: 5vw;
+            background-color: #FFF4A3;
+            border: #FFF4A3 solid 10px;
+            text-decoration: none;
+            color: #EDA85A;
+            justify-content: center;
+            align-items: center;
+            font-size: 3vw;
+            border-radius: 30px;
+        }
+
+        a:hover {
+            transform: translateX(-20px);
+            background-color: #EDA85A;
+            color: #FFF4A3;
+        }
+
+        body a {
+            display: flex;
+        }
+
+        
+
+        * {
+            transition: ease 0.5s;
+        }
+
+        .rectangle1,
+        .rectangle2,
+        .rectangle3,
+        .rectangle4 {
+            transition: 0s;
+        }
+
+        .end {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 100;
+            background-color: rgba(250, 244, 204, 0.5);
+        }
+
+        .win {
+            background-color: #EDA85A;
+            position: relative;
+            width: 500px;
+            height: fit-content;
+            border-radius: 50px;
+            padding: 20px;
+            margin: auto;
+            top: 35vh;
+            vertical-align: middle;
+            margin: auto;
+        }
+
+        h1 {
+            margin: auto;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        button {
+            background-color: #FCF6CD;
+            outline: none;
+            border: none;
+            border-radius: 50px;
+            padding: 20px;
+            width: 40%;
+            display: block;
+            margin: auto;
+            font-family: Raleway, sans-serif;
+            font-size: 2rem;
+            cursor: pointer, auto;
+        }
+
+        .joueur {
+            transition-duration: 0s;
+            position: absolute;
+            border-radius: 50%;
+            width: 75px;
+            height: 75px;
+            background-color: transparent;
+            border: 5px solid white;
+        }
+
+        .end {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../index.html">Retour</a>
+    <div class="end">
+        <div class="win">
+            <h1></h1>
+            <button class="reset" onclick="resetGame()">Rejouer ?</button>
+        </div>
+    </div>
+    <div class="joueur"></div>
+</body>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="jeu.js"></script>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quoridor - Règles du jeu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <style>
+        * {
+            transition: ease 0.5s;
+        }
+
+        body {
+            background-color: #EDA85A;
+            user-select: none;
+            overflow: hidden;
+            font-family: Raleway, sans-serif;
+
+        }
+
+        h1 {
+            margin-top: 10vh;
+            margin-left: 10vw;
+            align-items: center;
+            color: white;
+            font-size: 10em;
+            justify-content: center;
+        }
+
+        body {
+            width: 100vw;
+        }
+
+        body a,
+        body h1 {
+            display: flex;
+        }
+
+        div {
+            width: 0.8em;
+            height: 0.8em;
+            background-color: #FFF4A3;
+            border-radius: 500px;
+        }
+
+        a {
+            position: absolute;
+            top: 20px;
+            left: 2vw;
+            font-weight: bold;
+            width: 15vw;
+            height: 5vw;
+            background-color: #FFF4A3;
+            border: #FFF4A3 solid 10px;
+            text-decoration: none;
+            color: #EDA85A;
+            justify-content: center;
+            align-items: center;
+            font-size: 3vw;
+            border-radius: 30px;
+        }
+
+        a:hover {
+            transform: translateX(-20px);
+            background-color: #EDA85A;
+            color: #FFF4A3;
+        }
+
+        p {
+            position: absolute;
+            bottom: 5vh;
+            width: 40vw;
+            height: 40vh;
+            background-color: #FFF4A3;
+            padding: 30px;
+            color: #EDA85A;
+            font-weight: bold;
+            font-size: 1vw;
+            border-radius: 30px;
+        }
+
+        p:first-of-type {
+            left: 4vw;
+        }
+
+        p:last-of-type {
+            right: 4vw;
+        }
+
+        p:first-of-type span {
+            color: #1F8B87;
+        }
+
+        p:last-of-type span {
+            color: #AD2228;
+        }
+
+        h1:hover {
+            text-shadow: 0px 0px 20px rgba(255, 255, 255, 1);
+        }
+
+        h1:hover div:first-of-type {
+            background-color: #1F8B87;
+        }
+
+        h1:hover div:last-of-type {
+            background-color: #AD2228;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="../index.html">Retour</a>
+    <h1>QU<div></div>RID<div></div>R</h1>
+
+
+    <p>
+        <span>BUT DU JEU</span><br>
+        Atteindre le premier la ligne opposée àla ligne de départ. <br><br>
+        <span>RÈGLE POUR 2 JOUEURS</span><br>
+        En début de partie, les barrières sont remises dans leur zone de stockage. Chaque joueur pose son pion au centre
+        de sa ligne de départ. Un tirage au sort détermine qui commence. <br><br>
+        <span>DÉROULEMENT D'UNE PARTIE</span> <br>
+        A tour de rôle, chaque joueur choisit de déplacer son pion ou de poser une de ses barrières. Lorsqu’il n’a plus
+        de barrières, un joueur est obligé de déplacer son pion. <br><br>
+        <span>DÉPLACEMENT DES PIONS</span>
+        Les pions se déplacent d’une case, horizontalement ou verticalement, en avant ou en arrière; les barrières
+        doivent être contournées.
+    </p>
+    <p>
+        <span>POSE DES BARRIÈRES</span><br>
+        Une barrière doit être posée exactement entre 2 blocs de 2 cases. La pose des barrières a pour but de se créer
+        son propre chemin ou de ralentir l’adversaire, mais il est interdit de lui fermer totalement l’accès à sa ligne
+        de but: il faut toujours lui laisser une solution. <br><br>
+        <span>FACE À FACE</span><br>
+        Quand les 2 pions se retrouvent en vis-à-vis sur 2 cases voisines non séparées par une barrière, le joueur dont
+        c’est le tour peut sauter son adversaire et se placer derrière lui.Si une barrière est située derrière le pion
+        sauté, le joueur peut choisir de bifurquer à droite ou à gauche du pion sauté. <br><br>
+        <span>FIN DE LA PARTIE</span><br>
+        Le premier joueur qui atteint une des 9 cases de la ligne opposée à sa ligne de départ gagne la partie.
+    </p>
+</body>
+
+</html>
